@@ -1,0 +1,54 @@
+<div class="displayTable">
+  <div class="displayTableCell">
+
+    <div class="px-logo">
+      <a href="https://www.enziq.com" target="_blank">
+        <!-- <img class="svgImg" src="../../../assets/mobile.svg" alt="enziq.com - All you need is here!"> -->
+      </a>
+    </div>
+        
+    <div class="authBlock">
+      <h3>Sign In</h3>
+      <div class="formGroup">
+        <input type="text" class="formControl" placeholder="Username" #userName required>
+      </div>
+
+      <div class="formGroup">
+        <input type="password" class="formControl" placeholder="Password" #userPassword required>
+      </div>
+
+      <!-- Calling SignIn Api from AuthService -->
+      <div class="formGroup">
+        <!-- <a  class="waves-effect waves-light btn" > Sign In</a> -->
+        <button class="btn waves-effect waves-light" type="submit" name="action" (click)="authService.SignIn(userName.value, userPassword.value)">Sign In
+            
+          </button>
+      </div>
+
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+
+      <!-- Calling GoogleAuth Api from AuthService -->
+      <div class="formGroup">
+          <button type="button" class="btn googleBtn red" (click)="authService.GoogleAuth()">
+              <i class="fa fa-google-plus-g"></i>
+              Continue with Google
+            </button>
+        <!-- <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+          <i class="fab fa-google-plus-g"></i>
+          Log in with Google
+        </button> -->
+      </div>
+
+      <div class="forgotPassword">
+        <span class="btn" routerLink="/forgot-password">Forgot Password?</span>
+      </div>
+    </div>
+
+    <div class="redirectToLogin">
+      <span>Don't have an account?<span class="redirect btn" routerLink="/register-user"> Sign Up</span></span>
+    </div>
+
+  </div>
+</div>
